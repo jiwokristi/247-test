@@ -1,12 +1,21 @@
-interface TextareaProps extends React.ComponentProps<'textarea'> {}
+import { forwardRef, Ref } from 'react';
 
-export const Textarea = ({ ...props }: TextareaProps) => {
-  return (
-    <textarea
-      rows={5}
-      placeholder="Place text here..."
-      className="bg-primary tracking-0.25 w-full resize-none rounded-xl p-24 text-[1.8rem] placeholder-white/40"
-      {...props}
-    />
-  );
-};
+interface TextareaProps extends React.ComponentProps<'textarea'> {
+  ref?: Ref<HTMLTextAreaElement>;
+}
+
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ ...props }, ref) => {
+    return (
+      <textarea
+        ref={ref}
+        rows={5}
+        placeholder="Enter text here..."
+        className="w-full resize-none rounded-xl bg-primary p-24 text-[1.8rem] tracking-0.25 placeholder-white/40"
+        {...props}
+      />
+    );
+  },
+);
+
+Textarea.displayName = 'Textarea';

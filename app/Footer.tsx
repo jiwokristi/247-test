@@ -9,7 +9,6 @@ export const Footer = () => {
   };
 
   const formattedDate = new Intl.DateTimeFormat('en-ID', options).format(date);
-  console.log(formattedDate);
 
   return (
     <footer id="Footer" className="heading__primary pb-80 pt-96 text-center">

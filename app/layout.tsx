@@ -1,7 +1,12 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { Provider } from 'react-redux';
+// import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import { TabProvider } from './lib/context/provider/Tab';
+
+import store from './lib/store';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -10,10 +15,10 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: '247 - Jiwo Kristi',
-  description: 'Frontend Developer test for Jiwo Kristi.',
-};
+// export const metadata: Metadata = {
+//   title: '247 - Jiwo Kristi',
+//   description: 'Frontend Developer test for Jiwo Kristi.',
+// };
 
 export default function RootLayout({
   children,
@@ -25,7 +30,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <main>
           <Header />
-          <TabProvider>{children}</TabProvider>
+          <Provider store={store}>
+            <TabProvider>{children}</TabProvider>
+          </Provider>
         </main>
         <Footer />
       </body>
