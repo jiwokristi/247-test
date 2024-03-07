@@ -17,7 +17,6 @@ export default function Whole({
   show: boolean;
   dispatch: AppDispatch;
 }) {
-  const [count, setCount] = useState(3);
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -31,16 +30,6 @@ export default function Whole({
       }, 3000);
     }
   }, [dispatch, show]);
-
-  useEffect(() => {
-    if (count >= 1 && count <= 3 && show) {
-      setTimeout(() => {
-        setCount(p => p - 1);
-      }, 1000);
-    } else {
-      setCount(3);
-    }
-  }, [count, show]);
 
   return (
     <div className="px-24">
@@ -85,9 +74,6 @@ export default function Whole({
                 width={32}
                 className="absolute bottom-24 right-24"
               />
-              <span className="absolute bottom-[2.815rem] right-[3.6rem]">
-                {count}
-              </span>
             </>
           </div>,
           portalElement,

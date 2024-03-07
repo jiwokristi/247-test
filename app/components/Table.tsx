@@ -60,7 +60,7 @@ export function Table<T, P>({
               {action && (
                 <td className="p-16 text-[1.8rem] tracking-0.25">
                   <button onClick={() => action(row)}>
-                    <span>Delete</span>
+                    <span className="text-red-500">Delete</span>
                   </button>
                 </td>
               )}

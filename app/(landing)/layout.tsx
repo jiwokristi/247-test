@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const tabCtx = useContext(TabContext);
 
   return (
-    <section id="Landing__Layout">
+    <section id="Landing__Layout" className="tablets:translate-y-[24.34rem]">
       <div className="flex">
         <button
           className="relative flex-1 border-b border-white px-32 py-16 text-24 tracking-0.25 focus:shadow-none"

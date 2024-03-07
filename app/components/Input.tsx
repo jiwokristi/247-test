@@ -20,14 +20,14 @@ export const Input = ({ increment, decrement, ...props }: InputProps) => {
         <>
           <button
             type="button"
-            className="absolute right-24 top-4 rounded-sm transition-all ease-in hover:bg-initial-state active:bg-initial-state"
+            className="absolute right-24 top-4 rounded-sm transition-all ease-in hover:bg-initial-state active:bg-initial-state tablets:hidden"
             onClick={increment}
           >
             <ChevronUp />
           </button>
           <button
             type="button"
-            className="absolute bottom-4 right-24 rounded-sm transition-all ease-in hover:bg-initial-state active:bg-initial-state"
+            className="absolute bottom-4 right-24 rounded-sm transition-all ease-in hover:bg-initial-state active:bg-initial-state tablets:hidden"
             onClick={decrement}
           >
             <ChevronDown />
