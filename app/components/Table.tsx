@@ -26,7 +26,7 @@ export function Table<T, P>({
     typeof columns === 'function' ? columns(columnProps as P) : columns;
 
   if (data.length === 0) {
-    return <p>No data.</p>;
+    return <p className="text-[1.8rem] opacity-40">No data.</p>;
   }
 
   return (

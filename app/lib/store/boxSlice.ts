@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type InitialState = {
   quantity: number;
+  show: boolean;
 };
 
 const initialState: InitialState = {
   quantity: 0,
+  show: false,
 };
 
 const boxSlice = createSlice({
@@ -25,8 +27,11 @@ const boxSlice = createSlice({
     onChange: (state, action: PayloadAction<string>) => {
       state.quantity = +action.payload;
     },
+    onShow: state => {
+      state.show = !state.show;
+    },
   },
 });
 
-export const { increment, decrement, onChange } = boxSlice.actions;
+export const { increment, decrement, onChange, onShow } = boxSlice.actions;
 export default boxSlice.reducer;

@@ -14,7 +14,7 @@ export default function Page() {
   const tabCtx = useContext(TabContext);
 
   const { raw, words } = useAppSelector(({ glossary }) => glossary);
-  const { quantity } = useAppSelector(({ box }) => box);
+  const { quantity, show } = useAppSelector(({ box }) => box);
   const dispatch = useAppDispatch();
 
   return (
@@ -25,7 +25,7 @@ export default function Page() {
           <RightPanel words={words} dispatch={dispatch} />
         </div>
       ) : (
-        <WholePanel quantity={quantity} dispatch={dispatch} />
+        <WholePanel quantity={quantity} show={show} dispatch={dispatch} />
       )}
     </div>
   );
