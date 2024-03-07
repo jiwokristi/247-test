@@ -1,13 +1,13 @@
-'use client';
-
-import { useAppDispatch, useAppSelector } from '../lib/hooks/rtk';
-
 import { deleteWord } from '../lib/store/glossarySlice';
+import { AppDispatch } from '../lib/store';
 
-export default function Right() {
-  const { words } = useAppSelector(state => state.glossary);
-  const dispatch = useAppDispatch();
-
+export default function Right({
+  words,
+  dispatch,
+}: {
+  words: { word: string; frequency: number }[];
+  dispatch: AppDispatch;
+}) {
   return (
     <div className="w-1/2 px-24">
       <table className="w-full -translate-y-16">
