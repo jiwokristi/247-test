@@ -1,3 +1,5 @@
+'use client';
+
 export type Column<T> = {
   header: string;
   key?: string | number;

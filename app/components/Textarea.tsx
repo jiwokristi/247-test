@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, Ref } from 'react';
 
 interface TextareaProps extends React.ComponentProps<'textarea'> {

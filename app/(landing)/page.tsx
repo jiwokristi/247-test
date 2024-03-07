@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../lib/hooks/rtk';
 
-import { TabContext } from '../lib/context/tab';
+import { TabContext } from '../lib/contexts/tab';
 
 import LeftPanel from './Left';
 import RightPanel from './Right';

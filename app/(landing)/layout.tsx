@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import { GoldenUnderline } from '../components/GoldenUnderline';
 
-import { TabContext } from '../lib/context/tab';
+import { TabContext } from '../lib/contexts/tab';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const tabCtx = useContext(TabContext);
