@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 // import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { TabProvider } from './lib/context/provider/Tab';
+import { TabProvider } from './lib/contexts/providers/Tab';
 
 import store from './lib/store';
 
