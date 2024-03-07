@@ -1,24 +1,18 @@
-'use client';
-
-import { Provider } from 'react-redux';
-// import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
-import { TabProvider } from './lib/context/provider/Tab';
-
-import store from './lib/store';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { Wrapper } from './Wrapper';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+export const metadata: Metadata = {
+  title: 'Jiwo Kristi | 247',
+  description: 'Frontend Developer test for Jiwo Kristi.',
+};
 
-// export const metadata: Metadata = {
-//   title: '247 - Jiwo Kristi',
-//   description: 'Frontend Developer test for Jiwo Kristi.',
-// };
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -28,11 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div id="portal"></div>
         <main>
           <Header />
-          <Provider store={store}>
-            <TabProvider>{children}</TabProvider>
-          </Provider>
+          <Wrapper>{children}</Wrapper>
         </main>
         <Footer />
       </body>

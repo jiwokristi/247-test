@@ -12,21 +12,25 @@
   }
 
   html {
-    @apply text-[62.5%];
+    @apply text-[62.5%] smaller-desktops:text-[56.25%] landscape-tablets:text-[50%] tablets:text-[43.75%] smaller-tablets:text-[37.5%] phones:text-[31.25%];
   }
 
   body {
-    @apply text-16 bg-247-gradient bg-cover bg-center font-medium text-white;
+    @apply bg-247-gradient bg-cover bg-center text-16 font-medium text-white phones:bg-initial-state-light phones:bg-none;
   }
 
   main > section {
-    @apply mx-auto max-w-[120rem] px-32;
+    @apply mx-auto max-w-[120rem] px-32 tablets:px-64;
+  }
+
+  input[type='number']::-webkit-inner-spin-button {
+    @apply pointer-events-none opacity-0;
   }
 }
 
 @layer components {
   .heading__primary {
-    @apply text-62 tracking-1.25 font-bold;
+    @apply text-44 font-bold tracking-1.25;
   }
 
   .gradient__blue {

@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { calculateFrequency } from '../helpers/format';
+
 type InitialState = {
   words: { word: string; frequency: number }[];
   raw: string;
@@ -17,11 +19,21 @@ const glossarySlice = createSlice({
     onChange: (state, action: PayloadAction<string>) => {
       state.raw = action.payload;
     },
-    submitGlossary: (
-      state,
-      action: PayloadAction<{ word: string; frequency: number }[]>,
-    ) => {
-      state.words = action.payload;
+    submitGlossary: (state, action: PayloadAction<string>) => {
+      state.words = calculateFrequency(action.payload.split(' ')).sort(
+        (a, b) => {
+          const wordA = a.word;
+          const wordB = b.word;
+
+          if (wordA < wordB) {
+            return -1;
+          }
+          if (wordA > wordB) {
+            return 1;
+          }
+          return 0;
+        },
+      );
     },
     deleteWord: (state, action: PayloadAction<string>) => {
       state.words = state.words.filter(({ word }) => word !== action.payload);
